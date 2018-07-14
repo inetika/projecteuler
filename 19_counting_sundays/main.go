@@ -29,24 +29,20 @@ func main() {
 			} else if m == 2 {
 				if y%4 == 0 {
 					if y%100 == 0 && y%400 != 0 {
-						//28
 						for d := 1; d <= 28; d++ {
 							countSundays(d, m, y)
 						}
 					} else {
-						//29
 						for d := 1; d <= 29; d++ {
 							countSundays(d, m, y)
 						}
 					}
 				} else {
-					//28
 					for d := 1; d <= 28; d++ {
 						countSundays(d, m, y)
 					}
 				}
 			} else {
-				//31
 				for d := 1; d <= 31; d++ {
 					countSundays(d, m, y)
 				}
