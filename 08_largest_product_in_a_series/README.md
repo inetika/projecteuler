@@ -24,3 +24,6 @@
 <p>71636269561882670428252483600823257530420752963450</p>
 
 <p>Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?</p>
+
+<p>v.1.0</p>
+<p>Saved number in a string and iterated through each character converting it to int to perform calculations.</p>
