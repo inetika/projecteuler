@@ -8,29 +8,37 @@ Hence the difference between the sum of the squares of the first ten natural num
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.</p>
 
 <h4>v.1.0</h4>
-<p>Simple synchronous algorithm to calculate both and find the difference. Whole code was run 3 times with adjusting the amount of numbers.</br>
-<code>100 numbers            - 9.91µs</code></br>
-<code>1,000,000,000 numbers  - 605.095761ms</code></br>
-<code>10,000,000,000 numbers - 5.957863311s</code></p>
+<p>Simple synchronous algorithm to calculate both and find the difference. Whole code was run 3 times with adjusting the amount of numbers.</p>
+<pre>
+100 numbers            - 9.91µs</br>
+1,000,000,000 numbers  - 605.095761ms</br>
+10,000,000,000 numbers - 5.957863311s</br>
+</pre>
 
 <h4>v.2.0</h4>
-<p>The same algorithm but with <strong>go routines</strong> using waiting groups. Whole code was run 3 times with adjusting the amount of numbers.</br>
-<code>100 numbers            - 12.549µs      - 1.26x <strong>slower</strong> than synchronous version</code></br>
-<code>1,000,000,000 numbers  - 1.625799847s  - 2.69x <strong>slower</strong> than synchronous version</code></br>
-<code>10,000,000,000 numbers - 16.325798972s - 2.74x <strong>slower</strong> than synchronous version</code></p>
+<p>The same algorithm but with <strong>go routines</strong> using waiting groups. Whole code was run 3 times with adjusting the amount of numbers.</p>
+<pre>
+100 numbers            - 12.549µs      - 1.26x <strong>slower</strong> than synchronous version</br>
+1,000,000,000 numbers  - 1.625799847s  - 2.69x <strong>slower</strong> than synchronous version</br>
+10,000,000,000 numbers - 16.325798972s - 2.74x <strong>slower</strong> than synchronous version</br>
+</pre>
 
 <h4>v.1.1</h4>
-<p>Still synchronous but all calculations done in one run one after the other. First three - 100 numbers (each run takes less time although it's the same code), 4th - 1,000,000,000 numbers, 5th - 10,000,000,000 numbers.</br>
-<code>100            - <strong>8.948µs</strong></code></br>
-<code>100.2          - <strong>1.577µs</strong></code></br>
-<code>100.3          - <strong>1.356µs</strong></code></br>
-<code>1,000,000,000  - <strong>3.034843293s</strong><</code>/br>
-<code>10,000,000,000 - <strong>29.239634605s</strong></code></br>
+<p>Still synchronous but all calculations done in one run one after the other. First three - 100 numbers (each run takes less time although it's the same code), 4th - 1,000,000,000 numbers, 5th - 10,000,000,000 numbers.</p>
+<pre>
+100            - 8.948µs</br>
+100.2          - 1.577µs</br>
+100.3          - 1.356µs</br>
+1,000,000,000  - 3.034843293s</br>
+10,000,000,000 - 29.239634605s</br>
+</pre>
 
 <h4>v.2.1</h4>
-<p>Still same go routines but all calculations done in one run one after the other. First three - 100 numbers (each run takes less time although it's the same code), 4th - 1,000,000,000 numbers, 5th - 10,000,000,000 numbers.</br>
-<code>100            - <strong>13.772µs      - 1.53x <strong>slower</strong> than synchronous version</code></br>
-<code>100.2          - <strong>3.682µs       - 2.33x <strong>slower</strong> than synchronous version</code></br>
-<code>100.3          - <strong>2.634µs       - 1.94x <strong>slower</strong> than synchronous version</code></br>
-<code>1,000,000,000  - <strong>1.607745276s  - 1.88x <strong>faster</strong> than synchronous version</code></br>
-<code>10,000,000,000 - <strong>16.006218614s - 1.82x <strong>faster</strong> than synchronous version</code></br>
+<p>Still same go routines but all calculations done in one run one after the other. First three - 100 numbers (each run takes less time although it's the same code), 4th - 1,000,000,000 numbers, 5th - 10,000,000,000 numbers.</p>
+<pre>
+100            - 13.772µs      - 1.53x <strong>slower</strong> than synchronous version</br>
+100.2          - 3.682µs       - 2.33x <strong>slower</strong> than synchronous version</br>
+100.3          - 2.634µs       - 1.94x <strong>slower</strong> than synchronous version</br>
+1,000,000,000  - 1.607745276s  - 1.88x <strong>faster</strong> than synchronous version</br>
+10,000,000,000 - 16.006218614s - 1.82x <strong>faster</strong> than synchronous version</br>
+</pre>
